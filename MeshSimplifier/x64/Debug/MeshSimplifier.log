@@ -1,3 +1,2 @@
 ﻿  Main.cpp
-C:\Users\kaapo\source\repos\MeshSimplifier\MeshSimplifier\Main.cpp(32,3): error C2065: 'gggg': undeclared identifier
-C:\Users\kaapo\source\repos\MeshSimplifier\MeshSimplifier\Main.cpp(33,2): error C2143: syntax error: missing ';' before '}'
+  MeshSimplifier.vcxproj -> C:\Users\kaapo\source\repos\MeshSimplifier\x64\Debug\MeshSimplifier.exe
