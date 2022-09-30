@@ -1,5 +1,8 @@
 #include "Mesh.h"
 #include <iostream>
+#include "Errors.h"
+#include "ObjMesh.h"
+
 bool IsTerminator(const char* merkki)
 {
 	return (*merkki == '\0');
@@ -40,9 +43,9 @@ int main()
 	{
 		mesh.Read("C:/Users/kaapo/Documents/Blender_Exports/Testikuutio.obj");
 		cout << "Luetun tiedoston objektin nimi: " << mesh.name << "\n";
-		cout << "luettujen verteksien lkm: " << mesh.verticles.size() << "\n";
-		cout << "verteksit:\n";
-		for (Vertex& v : mesh.verticles)
+		cout << "luettujen verteksien lkm: " << mesh.vertices.size() << "\n";
+		/*cout << "verteksit:\n";
+		for (Vertex& v : mesh.vertices)
 		{
 			cout << v << "\n";
 		}
@@ -50,7 +53,10 @@ int main()
 		for (Face& v : mesh.faces)
 		{
 			cout << v << "\n";
-		}
+		}*/
+
+		mesh.remove_vertex_by_index(0);
+		mesh.remove_degenerated_triangles();
 
 		mesh.Write("C:/Users/kaapo/Documents/Blender_Exports/Testikuutio_oma.obj");
 	}

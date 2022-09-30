@@ -1,2 +1,6 @@
-﻿  Main.cpp
-  MeshSimplifier.vcxproj -> C:\Users\kaapo\source\repos\MeshSimplifier\x64\Debug\MeshSimplifier.exe
+﻿  Face.cpp
+C:\Users\kaapo\source\repos\MeshSimplifier\MeshSimplifier\Mesh.h(12,9): error C2065: 'Face': undeclared identifier
+C:\Users\kaapo\source\repos\MeshSimplifier\MeshSimplifier\Mesh.h(12,2): error C2923: 'std::vector': 'Face' is not a valid template type argument for parameter '_Ty'
+C:\Users\kaapo\source\repos\MeshSimplifier\MeshSimplifier\Mesh.h(12): message : see declaration of 'Face'
+C:\Users\kaapo\source\repos\MeshSimplifier\MeshSimplifier\Mesh.h(12,2): error C2976: 'std::vector': too few template arguments
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\vector(496): message : see declaration of 'std::vector'
