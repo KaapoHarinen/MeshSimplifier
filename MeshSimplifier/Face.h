@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
-#include "Mesh.h"
+#include <iostream>
 
 class Mesh;
 
@@ -29,6 +29,7 @@ public:
 	}
 
 	bool is_degenerated(Mesh& mesh);
+	float GetArea(Mesh& mesh) const;
 };
 
 inline std::ostream& operator<<(std::ostream& s, const Face& f)

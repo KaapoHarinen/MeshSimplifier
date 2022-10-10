@@ -3,6 +3,7 @@
 #include "Face.h"
 #include "Vector3.h"
 #include <list>
+#include <iostream>
 
 using namespace std;
 
@@ -15,4 +16,5 @@ public:
 	list<int> find_triangles_sharing_vertex(uint32_t vertexIndex);
 	void remove_vertex_by_index(uint32_t vertexIndex);
 	void remove_degenerated_triangles();
+	void remove_smallest_triangle();
 };

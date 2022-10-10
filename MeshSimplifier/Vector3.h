@@ -1,5 +1,7 @@
 #pragma once
 #include <ostream>
+#include <iostream>
+
 class Vector3
 {
 public:
@@ -21,7 +23,7 @@ public:
 inline std::ostream& operator<<(std::ostream& s, const Vector3& v)
 {
 	s << v.X << ", " << v.Y << ", " << v.Z;
-		return s;
+	return s;
 }
 
 typedef Vector3 Vertex;

@@ -1,4 +1,5 @@
 #include "Mesh.h"
+#include <iostream>
 
 using namespace std;
 
@@ -54,4 +55,23 @@ Mesh::remove_degenerated_triangles()
 		faces.erase(faces.begin() + facesToBeRemoved.back());
 		facesToBeRemoved.pop_back();
 	}
+}
+
+void
+Mesh::remove_smallest_triangle()
+{
+	float minArea = faces[0].GetArea(*this);
+	size_t minFace = 0;
+
+	for (size_t i = 1; i < faces.size(); i++)
+	{
+		float tmp = faces[i].GetArea(*this);
+		if (tmp < minArea)
+		{
+			minFace = i;
+			minArea = tmp;
+		}
+	}
+
+	faces.erase(faces.begin() + minFace);
 }

@@ -41,7 +41,7 @@ int main()
 	ObjMesh mesh;
 	try
 	{
-		mesh.Read("C:/Users/kaapo/Documents/Blender_Exports/Testikuutio.obj");
+		mesh.Read("C:/Users/kaapo/Documents/Blender_Exports/pienipinta.obj");
 		cout << "Luetun tiedoston objektin nimi: " << mesh.name << "\n";
 		cout << "luettujen verteksien lkm: " << mesh.vertices.size() << "\n";
 		/*cout << "verteksit:\n";
@@ -55,18 +55,19 @@ int main()
 			cout << v << "\n";
 		}*/
 
-		mesh.remove_vertex_by_index(0);
-		mesh.remove_degenerated_triangles();
+		//mesh.remove_vertex_by_index(0);
+		//mesh.remove_degenerated_triangles();
+		mesh.remove_smallest_triangle();
 
-		mesh.Write("C:/Users/kaapo/Documents/Blender_Exports/Testikuutio_oma.obj");
+		mesh.Write("C:/Users/kaapo/Documents/Blender_Exports/pienipinta.obj");
 	}
 	catch (CannotOpenFileException& ex)
 	{
 		cout << "En voi avata tiedostoa: '" << ex.what() << "'\n";
 	}
 
-	Vector3 v;
-	Vector3 a;
+	Vector3 v{};
+	Vector3 a{};
 
 	Vector3 result = v - a;
 

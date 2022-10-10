@@ -2,6 +2,7 @@
 #include "Mesh.h"
 #include <cstdint>
 #include <set>
+#include <cmath>
 
 using namespace std;
 
@@ -35,4 +36,18 @@ bool Face::is_degenerated(Mesh& mesh)
 	{
 		return true;
 	}
+}
+
+float
+Face::GetArea(Mesh& mesh) const
+{
+	Vertex vA = mesh.vertices[a];
+	Vertex vB = mesh.vertices[b];
+	Vertex vC = mesh.vertices[c];
+	float lenAB = (vA - vB).Length();
+	float lenAC = (vA - vC).Length();
+	float lenCB = (vC - vB).Length();
+	float semiperimeter = (lenAB + lenAC + lenCB) * 0.5;
+	float area = sqrt(semiperimeter * (semiperimeter - lenAB) * (semiperimeter - lenAC) * (semiperimeter - lenCB));
+	return area;
 }
