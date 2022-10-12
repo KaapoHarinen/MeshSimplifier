@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Errors.h"
 #include "ObjMesh.h"
+#include <GLFW/glfw3.h>
 
 bool IsTerminator(const char* merkki)
 {
@@ -38,6 +39,8 @@ void GetAddress(int* lahde, int koko, int* kohde[])
 
 int main()
 {
+	//int aaa = glfwInit();
+
 	ObjMesh mesh;
 	try
 	{
